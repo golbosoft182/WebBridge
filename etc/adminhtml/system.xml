@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="ammarindo_webbridge" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="5" translate="label comment">
+            <label>Web Bridge</label>
+            <tab>ammarindo</tab>
+            <resource>Ammarindo_WebBridge::config</resource>
+            <group id="general" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="5" translate="label comment">
+                <label>General</label>
+                <field id="enable" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="5" translate="label comment" type="select">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="site_web_id" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="10" translate="label comment" type="text">
+                    <label>Site ID</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+                <field id="promotion_id" showInDefault="1" showInStore="1" showInWebsite="1" sortOrder="11" translate="label comment" type="text">
+                    <label>Promotion ID</label>
+                    <depends>
+                        <field id="enable">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

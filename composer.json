@@ -1,0 +1,22 @@
+{
+    "name": "ammarindo/web-bridge",
+    "description": "Ammarindo module for Web Bridge",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Eka",
+            "email": "ekahandik@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Ammarindo\\WebBridge\\": ""
+        }
+    }
+}
