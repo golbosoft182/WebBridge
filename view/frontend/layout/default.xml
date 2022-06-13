@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block name="ammarindo_webbridge_lp_tag" class="Ammarindo\WebBridge\Block\InlineJS" template="Ammarindo_WebBridge::html/lp_tag.phtml"/>
+        </referenceBlock>
+        <referenceContainer name="order.success.additional.info">
+            <block name="ammarindo_webbridge_cv_tag" class="Ammarindo\WebBridge\Block\InlineJS" template="Ammarindo_WebBridge::html/cv_tag.phtml" />
+        </referenceContainer>
+    </body>
+</page>

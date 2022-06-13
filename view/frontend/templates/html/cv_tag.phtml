@@ -1,0 +1,29 @@
+<?php
+    $order = $block->getOrder();
+    $amounts = '';
+?>
+<?php if(!empty($block->getSiteWebId()) && !empty($block->getPromotionId())): ?>
+    <script>
+        if (!window.afblpcvCvConf) {
+            window.afblpcvCvConf = [];
+        }
+        window.afblpcvCvConf.push({
+            siteId: "<?= $block->getSiteWebId() ?>",
+        commitData: {
+        pid: "<?= $block->getPromotionId() ?>",
+        u: "<?php echo $order['increment_id']; ?>",
+        <?php foreach($order->getAllItems() as $key => $item) {
+            if ($key > 0) $amounts .=':';
+            $id = $item->getProductId();
+            $sku = $item->getSku();
+            $qty = $item->getQtyOrdered();
+            $latest_qty = floatval($qty);
+            $price = $item->getPrice();
+            $latest_price = floatval($price);
+            $amounts .= $sku .'*'. $latest_qty .'*'. $latest_price;
+        }
+        ?>
+        amount: "<?php echo $amounts ?>",}});
+    </script>
+    <script src="https://t.webridge.net/js/lpcv.js?cid=<?= $block->getSiteWebId() ?>&pid=<?= $block->getPromotionId() ?>" async="async"></script>
+<?php endif; ?>

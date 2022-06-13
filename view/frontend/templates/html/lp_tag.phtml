@@ -1,0 +1,11 @@
+<?php if(!empty($block->getSiteWebId()) && !empty($block->getPromotionId())): ?>
+<script>
+    if (!window.afblpcvLpConf) {
+    window.afblpcvLpConf = [];
+    }
+    window.afblpcvLpConf.push({
+        siteId: "<?= $block->getSiteWebId() ?>",           
+    });
+</script>
+    <script src="https://t.webridge.net/js/lpcv.js?cid=<?= $block->getSiteWebId() ?>&pid=<?= $block->getPromotionId() ?>" async="async"></script> 
+<?php endif; ?>   
